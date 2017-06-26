@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import LandingPage from '../landing/LandingPage.jsx';
-import Mylist from '../MylistPage/Mylist.jsx';
-import Event from './Event.jsx';
+import LandingPage from '../LandingPage/LandingPage.jsx';
+// import Mylist from '../MylistPage/Mylist.jsx';
+// import Event from './Event.jsx';
 
 
 
@@ -12,20 +12,20 @@ import Event from './Event.jsx';
 class ResultPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      items: []
-    }
+    
   }
 
 
   render () {
     return (<div>
-      <Mylist />
-      <LandingPage />
-      <Event />
+      
     </div>)
   }
 }
 
 
-export default Result;
+export default ResultPage;
+
+// <Mylist />
+// <LandingPage />
+// <Event />

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import LandingPage from './components/LandingPage/LandingPage.jsx';
+import ResultPage from './components/EventResultPage/ResultPage.jsx';
 
 
 // index.js is the top component 
@@ -17,6 +18,9 @@ class App extends React.Component {
     super(props);
     this.state = { 
       userName: '',
+      location: '',
+      date:'',
+      eventType:'', 
       allEvents: [],
       savedEvents: []
     }
@@ -32,6 +36,15 @@ class App extends React.Component {
     console.log("name ", name);
     this.setState({
       userName: name
+    });
+    this.setState({
+      location: location
+    });
+    this.setState({
+      date: dateSelected
+    });
+    this.setState({
+      eventType: eventSelected
     });
     $.ajax({
       url: '/events',
@@ -117,8 +130,13 @@ class App extends React.Component {
 //Change Render!
   render () {
     return (<div>
-       <div> {this.state.userName}</div>
+
       <LandingPage searchEvents= {this.submitEvent.bind(this)}/> 
+      {console.log('NAME!!!:', this.state.userName) }
+      {console.log('location!!!:', this.state.location) }
+      {console.log('date!!!:', this.state.date) }
+      {console.log('eventType!!!:', this.state.eventType) }
+      <ResultPage name={this.state.userName} location={this.state.location}/>
 
     </div>)
   }
@@ -127,10 +145,11 @@ class App extends React.Component {
 
 
 ReactDOM.render(<App />, document.getElementById('app'));
+      
 
 
 
 
-    // <ResultPage />
+
     //   <DescriptionPage />
     //   <MyListPage />

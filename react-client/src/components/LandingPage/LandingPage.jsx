@@ -58,15 +58,17 @@ class LandingPage extends React.Component {
     return (<div id="main">
     
     <table className="mainInput">
-      <tr > <td className="title"> NAME: </td> 
-            <td> <input className="inputBox" type="text" placeholder="type your name" value={this.state.nameInput} onChange={this.nameInputChange.bind(this)}/> </td> 
+    <tbody>
+      <tr> <td className="title"> NAME: </td> 
+            <td> <input className="inputBox" type="text" placeholder="Type your name" value={this.state.nameInput} onChange={this.nameInputChange.bind(this)}/> </td> 
       </tr>
-      <tr > <td className="title"> DATE:</td> 
+      <tr> <td className="title"> DATE:</td> 
             <td><input className="inputBox" type="text" placeholder="MM-DD" value={this.state.date} onChange={this.dataInputChange.bind(this)}/> </td> 
       </tr> 
-      <tr > <td className="title"> LOCATION:</td> 
-            <td> <input className="inputBox" type="text" placeholder="type location" value={this.state.location} onChange={this.locationChange.bind(this)}/></td>
+      <tr> <td className="title"> LOCATION:</td> 
+            <td> <input className="inputBox" type="text" placeholder="Type location" value={this.state.location} onChange={this.locationChange.bind(this)}/></td>
       </tr>
+      </tbody>
     </table>
 
 
