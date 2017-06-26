@@ -12,7 +12,7 @@ import LandingPage from '../LandingPage/LandingPage.jsx';
 class ResultPage extends React.Component {
   constructor(props) {
     super(props);
-    
+  
   }
 
 
