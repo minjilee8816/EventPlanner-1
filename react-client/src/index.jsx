@@ -132,11 +132,8 @@ class App extends React.Component {
     return (<div>
 
       <LandingPage searchEvents= {this.submitEvent.bind(this)}/> 
-      {console.log('NAME!!!:', this.state.userName) }
-      {console.log('location!!!:', this.state.location) }
-      {console.log('date!!!:', this.state.date) }
-      {console.log('eventType!!!:', this.state.eventType) }
-      <ResultPage name={this.state.userName} location={this.state.location}/>
+ 
+      <ResultPage name={this.state.userName} location={this.state.location} data={this.state.date} eventType={this.state.eventType}/>
 
     </div>)
   }
