@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
-var helper = require('./dbHelper.js');
+//var helper = require('./dbHelper.js');
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
@@ -10,8 +10,9 @@ var helper = require('./dbHelper.js');
 var app = express();
 
 // UNCOMMENT FOR REACT
-app.use(express.static(__dirname + '/../react-client/dist'));
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/../client/dist'));
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
@@ -19,10 +20,12 @@ app.use(bodyParser());
 app.post('/events', function(req, res) {
   var result = [];
   var month = '';
-  console.log("****************req.body:  ", req.body);
+  console.log("****************req.body:  ", JSON.parse(Object.keys(req.body)[0]));
+  req.body = JSON.parse(Object.keys(req.body)[0]);
 
 
   console.log("Post request Got !!! ");
+  console.log('REQ BODY!!!!!!!!!', req.body);
   switch (req.body.eventDate.slice(0, 2)) {
     case '01':
         month = "January";
@@ -75,37 +78,26 @@ app.post('/events', function(req, res) {
       //http://api.eventful.com/json/events/search?app_key=HXWRVg4cwThzKRdQ&q=concerts&l=las+vegas&when=July+4
   }
   request(options, function(err, response, body){
-    console.log("******* API response.body", JSON.parse(body));
-    res.send(JSON.parse(body).events.event);
+    console.log("******* API response.body", JSON.parse(body).events.event);
+    var x = JSON.parse(body).events.event;
+    res.send(x);
   });
 });
 
 
-app.post('/selected', function(req, res) {
-  console.log("**************** /selected req.body:  ", req.body);
-  // res.send('Got /selected request');
-  helper.saveEvents(req, res);
-});
+// app.post('/selected', function(req, res) {
+//   console.log("**************** /selected req.body:  ", req.body);
+//   // res.send('Got /selected request');
+//   helper.saveEvents(req, res);
+// });
 
 
 
-app.post('/retrieve', function(req, res) {
-  console.log("****************req.body:  ", req.body);
-  helper.dbLookup(req, res);
-});
-
-
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
-});
+// app.post('/retrieve', function(req, res) {
+//   console.log("****************req.body:  ", req.body);
+//   helper.dbLookup(req, res);
+// });
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });
-
