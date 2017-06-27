@@ -26,7 +26,6 @@
         text-align: left;
         padding: 5px;
       }
-
       #main {
         text-align: center;
         margin-top: 30px;
@@ -41,16 +40,15 @@
         width: 300px;
         height: 50px;
       }
-
       .eventCatagory{
         margin-left: 20px;
         margin-top: 40px;
         font-size: 18px;
         padding: 11px;
-   
       }
       #submitButton{
-        margin-top: 30px
+        margin-top: 30px;
+        margin-bottom: 200px;
       } 
       #title {
         margin-top: 150px;
@@ -60,21 +58,86 @@
         font-style: italic;
         text-align: center;
       }
+      #result {
+        margin-top: 100px;
+        background-color: #FEDD08;
+        color: black;
+      }
+      .submitInfo {
+        margin-left: 60px;
+        /*margin-right: 60px;*/
+      } 
+      .basicInfo {
+        width: 500px;
+      }
+      #myEventClick { 
+        margin-left: 200px;
+        font-size: 20px;
+      }
+      #events{
+        background-color: #C2C2C3;
+        color: black;
+      }
+      #length{
+        font-size:13px;
+        color: #D91463;
+      }
+
+      .allEvents{
+        text-align: left;
+        padding: 10px;
+      }
+      #mainButton{
+        transition-property: width;
+        transition-duration: 5s;
+        transition-delay: 5s;
+      }
+      .eachEvent{
+        display:inline-block;
+        margin-left:40px;
+        padding: 5px;
+      }
+      .eventHandler {
+        color:black;
+        width: 250px;
+        height:400px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: white;
+      }
+      .eventSmallDes{
+        padding: 10px;
+      }
+      .eventVenueName{
+        color: grey;
+      }
+      .eventStartTime{
+        color: #656565;
+      }
+      .eventTitle{
+        color: black;
+      }
+      .eventTitle:hover{
+        color: #D91463;
+      }
+      #logo {
+        font-weight: bold;   
+      }
+      #myEventsList{
+        background-color: pink;
+        color: black;
+      }
 
     </style>
     <link href="css/new-age.min.css" rel="stylesheet">
 </head>
-<body>
-
-  <header>
-  <h2 id='title'>EVENT PLANNER</h2>
-  <div id="app"></div>
-  <div id="results-page"></div>  
- 
-  <script type="text/javascript" src="bundle.js"></script>
+  <header id="top">
+    <h2 id='title'> EVENT PLANNER</h2>
+    <div id="app"></div>
   </header>
-
-
-
-</body>
+  <footer>
+    © 2017 Cool-Crocodiles. All Rights Reserved.<br>
+    Privacy  Terms  FAQ
+  </footer>
+<script type="text/javascript" src="bundle.js"></script>
 </html>

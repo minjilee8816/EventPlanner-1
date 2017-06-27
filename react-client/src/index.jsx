@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import LandingPage from './components/LandingPage/LandingPage.jsx';
 import ResultPage from './components/EventResultPage/ResultPage.jsx';
-import { BrowserRouter } from 'react-router-dom';
-import { Router, Route, Switch } from 'react-router';
+import Events from './components/EventResultPage/Events.jsx';
+import Mylist from './components/MyListPage/MyList.jsx';
+
+// import { BrowserRouter } from 'react-router-dom';
+// import { Router, Route, Switch } from 'react-router';
+import sampleData from './fakeData.js';
+// import { Sticky } from './Nav.jsx';
 
 // index.js is the top component 
 // top Component 
@@ -13,16 +18,20 @@ import { Router, Route, Switch } from 'react-router';
 // 3. description page 
 // 4. mylist page 
 
+
+
+
+
 //communicate with Saikal before making any changes in this.state section!!!
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      userName: '',
-      location: '',
-      date:'',
-      eventType:'', 
-      allEvents: [],
+      userName: null,
+      location: null,
+      date: null,
+      eventType: null, 
+      allEvents: sampleData.fakeData,
       savedEvents: []
     }
   }
@@ -130,10 +139,24 @@ class App extends React.Component {
 
 //Change Render!
   render () {
-    return (
-    <div>
+    return ( <div id= "main">
+    <div id= "landing">
       <LandingPage searchEvents= {this.submitEvent.bind(this)}/> 
-      <ResultPage name={this.state.userName} location={this.state.location} data={this.state.date} eventType={this.state.eventType} />
+    </div>
+
+    <div id="result">
+      { this.state.userName !== null ? <ResultPage name={this.state.userName} location={this.state.location} data={this.state.date} eventType={this.state.eventType} allEvents={this.state.allEvents}/> : null }
+    </div>
+
+    <div id="events">
+      { this.state.userName !== null ? <Events events={this.state.allEvents}/> : null }
+    </div>
+
+    <div id="myEventsList">
+    look
+      <Mylist />
+    </div>
+
     </div>
     )
   }
@@ -141,11 +164,6 @@ class App extends React.Component {
 
 
 ReactDOM.render( <App /> , document.getElementById('app'));
-
-
-//  
-// ReactDOM.render(<App />, document.getElementById('app'));
-      
 
 
 
@@ -161,4 +179,4 @@ ReactDOM.render( <App /> , document.getElementById('app'));
 
 
     //   <DescriptionPage />
-    //   <MyListPage />
+  

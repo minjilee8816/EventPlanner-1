@@ -60,13 +60,13 @@ class LandingPage extends React.Component {
     <table className="mainInput">
     <tbody>
       <tr> <td className="title"> NAME: </td> 
-            <td> <input className="inputBox" type="text" placeholder="Type your name" value={this.state.nameInput} onChange={this.nameInputChange.bind(this)}/> </td> 
+           <td> <input className="inputBox" type="text" placeholder="Type your name" value={this.state.nameInput} onChange={this.nameInputChange.bind(this)}/> </td> 
       </tr>
       <tr> <td className="title"> DATE:</td> 
-            <td><input className="inputBox" type="text" placeholder="MM-DD" value={this.state.date} onChange={this.dataInputChange.bind(this)}/> </td> 
+           <td><input className="inputBox" type="text" placeholder="MM-DD" value={this.state.date} onChange={this.dataInputChange.bind(this)}/> </td> 
       </tr> 
       <tr> <td className="title"> LOCATION:</td> 
-            <td> <input className="inputBox" type="text" placeholder="Type location" value={this.state.location} onChange={this.locationChange.bind(this)}/></td>
+           <td> <input className="inputBox" type="text" placeholder="Type location" value={this.state.location} onChange={this.locationChange.bind(this)}/></td>
       </tr>
       </tbody>
     </table>
@@ -86,7 +86,7 @@ class LandingPage extends React.Component {
 
 
     <div id='submitButton'>
-        <a className="btn btn-outline btn-xl page-scroll" onClick={this.submitMethod.bind(this)} > SEARCH EVENTS!</a>
+        <a id="mainButton"  className="btn btn-outline btn-xl page-scroll" onClick={this.submitMethod.bind(this)} href="#result"> SEARCH EVENTS!</a>
     </div>
     </div>)
   }

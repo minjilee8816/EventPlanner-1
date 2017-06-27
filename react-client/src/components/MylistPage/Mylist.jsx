@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import LandingPage from '../landing/LandingPage.jsx';
 
 // 1. landing page _ submit componemnt 
 
@@ -15,8 +14,10 @@ class Mylist extends React.Component {
 
 
   render () {
-    return (<div>
-      
+    return (
+    <div>
+        {console.log('checking')}
+        checkkkksdasdasdfasdfsadffasdfafasd
     </div>)
   }
 }
