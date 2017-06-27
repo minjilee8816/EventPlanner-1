@@ -10,7 +10,9 @@ import LandingPage from '../LandingPage/LandingPage.jsx';
 class ResultPage extends React.Component {
   constructor(props) {
     super(props);
-    
+    this.state = {
+
+    }
   }
 
 
@@ -35,7 +37,7 @@ class ResultPage extends React.Component {
           </td>
 
           <td id="myEventClick">
-            <a href="#TYPEEEEEEEEE HERERERER"><b>My Events</b></a>
+            <a href="#myEventsList"><b>My Events</b></a>
           </td>
         </tr>
       </table>

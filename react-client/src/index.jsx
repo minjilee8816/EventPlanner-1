@@ -4,6 +4,7 @@ import $ from 'jquery';
 import LandingPage from './components/LandingPage/LandingPage.jsx';
 import ResultPage from './components/EventResultPage/ResultPage.jsx';
 import Events from './components/EventResultPage/Events.jsx';
+import Mylist from './components/MyListPage/MyList.jsx';
 
 // import { BrowserRouter } from 'react-router-dom';
 // import { Router, Route, Switch } from 'react-router';
@@ -151,6 +152,10 @@ class App extends React.Component {
       { this.state.userName !== null ? <Events events={this.state.allEvents}/> : null }
     </div>
 
+    <div id="myEventsList">
+    look
+      <Mylist />
+    </div>
 
     </div>
     )
@@ -174,4 +179,4 @@ ReactDOM.render( <App /> , document.getElementById('app'));
 
 
     //   <DescriptionPage />
-    //   <MyListPage />
+  

@@ -7,7 +7,7 @@ const Event = (props) => (
 
   <div className="eachEvent">
     <div className ="eventHandler">
-      <a href="HERE our link URL">
+      <a href="HERE">
        
           <div className="eventImages">
             <img src="http://s4.evcdn.com/images/block250/I0-001/024/825/663-1.jpeg_/mj-live-michael-jackson-tribute-concer-63.jpeg"/>
